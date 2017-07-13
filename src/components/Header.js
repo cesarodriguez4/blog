@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton } from 'material-ui';
 import MenuIcon from 'material-ui-icons/Menu';
 
 const bgHeader = {
-  backgroundColor: 'white'
+  backgroundColor: '#282e33'
 };
 
 export default class Header extends React.Component {
@@ -12,11 +12,11 @@ export default class Header extends React.Component {
       <div>
         <AppBar style={bgHeader} position="static">
           <Toolbar>
-            <IconButton aria-label="Menu">
+            <IconButton className="text-primary" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Typography type="title">
-              CesarJS | Blog
+            <Typography className="text-white" type="title">
+              El Blog de Cesar
             </Typography>
           </Toolbar>
         </AppBar>
