@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 // Components
-import Header from './components/Header.js';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Code from './components/Code';
 import Politic from './components/Politic';
 import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
 import Doc from './components/Doc';
+import CV from './components/CV';
 import { Route, Switch } from 'react-router-dom';
-
-const padding = {
-  padding: '1em'
-};
 
 class App extends Component {
   render() {
@@ -18,14 +17,15 @@ class App extends Component {
       <div className="App">
         <Header></Header>
         <Switch>
-          <div style={padding}>
         	  <Route exact path="/" component={Home}/>
         	  <Route path="/code" component={Code}/>
             <Route path="/world" component={Politic}/>
+            <Route path="/contact" component={Contact}/>
             <Route path="/about" component={AboutMe}/>
             <Route path="/docs" component={Doc}/>
-          </div>
+            <Route path="/CV" component={CV}/>
         </Switch>
+        <Footer></Footer>
       </div>
     );
   }

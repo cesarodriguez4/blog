@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import { Typography, Button } from 'material-ui';
+import { Link } from 'react-router-dom';
+
+const buttonW = {
+  width: '100%'
+};
 
 export default class MiniPortfolio extends Component {
   render() {
@@ -7,7 +12,7 @@ export default class MiniPortfolio extends Component {
       <div>
         <Typography align='left' type='button'><small><strong>+3 años de experiencia 
         laboral creando proyectos desde 0 a clientes 
-        en <i className='text-success'>Europa</i>, <i className='text-success'>USA</i> y <i className='text-success'>latinoamérica</i></strong></small></Typography>
+        en <i className='text-success'>Europa</i>, <i className='text-success'>USA</i> y <i className='text-success'>latinoamérica.</i></strong></small></Typography>
         <Typography align='left'>
           Mi stack esta basado en:
           <li>ReactJs</li>
@@ -22,8 +27,10 @@ export default class MiniPortfolio extends Component {
           <li>UI/UX</li>
         </Typography>
         <Typography>Me gusta lo que hago 
-        y he trabajado en equipos remotos usando Skype, Slack y Trello</Typography>
-        <Button>Saber más</Button>
+        y he trabajado en equipos remotos usando Skype, Slack y Trello.</Typography>
+        <Link to='/CV'>
+          <Button raised style={buttonW}>Saber más</Button>
+        </Link>
       </div>
   		);
   }
