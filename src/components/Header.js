@@ -9,9 +9,11 @@ import Menu, { MenuItem } from 'material-ui/Menu';
 import Drawer from 'material-ui/Drawer';
 import ProfileThumb from './ProfileThumb';
 import Grid from 'material-ui/Grid';
+import { Link } from 'react-router-dom';
+import Hidden from 'material-ui/Hidden';
 
 const bgHeader = {
-  backgroundColor: '#282e33'
+  backgroundColor: '#0275d8'
 };
 
 const ldrawer = {
@@ -21,7 +23,10 @@ const ldrawer = {
 
 const title = {
   marginTop: '2%',
-  color: 'white'
+  color: 'white',
+  fontFamily: `'Berkshire Swash', cursive`,
+  textTransform: 'none',
+  fontSize: '1em'
 }
 
 export default class Header extends React.Component {
@@ -55,11 +60,13 @@ export default class Header extends React.Component {
         <AppBar style={bgHeader} position="static">
           <Toolbar>
             <Grid container justify='flex-start'>
-              <IconButton className="text-primary" aria-label="Menu" onClick={this.handleDrawer}>
-                <MenuIcon />
-              </IconButton>
+              <Hidden only={['lg', 'md']}>
+                <IconButton aria-label="Menu" onClick={this.handleDrawer}>
+                  <MenuIcon />
+                </IconButton>
+              </Hidden>
               <Typography type="title">
-                  <Button style={title}>Blog | Cesar Jr Rodriguez</Button>
+                  <Link to="/"><Button style={title}>Cesarjs.xyz</Button></Link>
               </Typography>
             </Grid>
             <Grid container justify='flex-end'>

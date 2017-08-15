@@ -2,18 +2,50 @@ import React, { Component } from 'react';
 import Markdown from 'react-markdown';
 import Grid from 'material-ui/Grid';
 
-const md = `# Studying Javascript Classes
-
-Mi nombre es \`Cesar\``;
+let md = '';
+let cd = '';
+let td = '';
 
 export default class Doc extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      idDoc: '',
+      doc: null
+    }
+  }
+  componentWillMount() {
+    const URL_INFO = `http://api.cesarjs.xyz/news/${this.props.match.params.id}`;
+    this.setState({idDoc: this.props.match.params});
+    fetch(URL_INFO)
+    .then(response => {
+      if (response.status !== 200) {
+        console.log('Problem with the response');
+        return;
+      }
+      response.json().then(data => {
+        this.setState({doc: data[0]});
+      });
+    });
+  }
   render() {
+    if (this.state.doc) {
+      td = <h1>{this.state.doc.title}</h1>;
+      cd = <img alt={this.state.doc.title} src={this.state.doc.cover}/>;
+      md = this.state.doc.content;
+    } else {
+      md = 'Loading...';
+      cd = '';
+      td = '';
+    }
   	return (
           <Grid container gutter={0}>
             <Grid item md={2}>
              {/* Aca pueden ir articulos recomendados*/}
             </Grid>
-            <Grid item md={8}>
+            <Grid className='content-md' item md={8}>
+              <div>{td}</div>
+              <div>{cd}</div>
               <Markdown source={md}/>
             </Grid>
             <Grid item md={2}>

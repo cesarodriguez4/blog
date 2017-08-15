@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Open+Sans');
+
+.cardnew:hover {
+  background-color: #fdfdfd;
+  box-shadow: 1px 1px 4px #c3c3c3;
+}
+a:-webkit-any-link {
+    text-decoration: none !important;
+}
+
+.content-md {
+  text-align: center;
+}
+.content-md p {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  font-size: 1.5em;
+  margin: 2em 0em 2em 0em;
+}
+.content-md img {
+  width: 100%;
+}
+
+.content-md h1 {
+  margin-top: 1em;
+}

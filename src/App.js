@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/world" component={Politic}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/about" component={AboutMe}/>
-            <Route path="/docs" component={Doc}/>
+            <Route path="/docs/:id/:name" component={Doc}/>
             <Route path="/CV" component={CV}/>
         </Switch>
         <Footer></Footer>
