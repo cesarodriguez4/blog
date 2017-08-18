@@ -7,7 +7,18 @@ import Hidden from 'material-ui/Hidden';
 import { LinearProgress } from 'material-ui/Progress';
 
 const URL_CARDS = `http://api.cesarjs.xyz/news`;
-
+const thumbMargin = {
+  marginRight: '6em',
+  marginLeft: '1em',
+  marginTop: '1em'
+};
+const mini = {
+  marginLeft: '-7em',
+  marginTop: '1em'
+};
+const feeds = {
+  marginTop: '2em'
+};
 export default class Home extends Component {
   componentWillMount() {
     fetch(URL_CARDS)
@@ -33,17 +44,17 @@ export default class Home extends Component {
       feed = <div><p>Loading...</p><LinearProgress/></div>;
     }
   	return (
-        <Grid className='p-5' container justify='center' gutter={24}>
+        <Grid container justify='center' gutter={24}>
           <Hidden smDown>
-            <Grid item md={2}>
+            <Grid item md={2} style={thumbMargin}>
               <ProfileThumb></ProfileThumb>
             </Grid>
           </Hidden>
-          <Grid item xs={3} md={7}>
+          <Grid item xs={12} md={7} style={feeds}>
           {feed}
           </Grid>
           <Hidden smDown>
-            <Grid item md={2}><MiniPortfolio></MiniPortfolio></Grid>
+            <Grid item md={2} style={mini}><MiniPortfolio></MiniPortfolio></Grid>
           </Hidden>
         </Grid>
   		);

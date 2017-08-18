@@ -17,8 +17,7 @@ const bgHeader = {
 };
 
 const ldrawer = {
-  width: 300,
-  padding: '3em'
+  width: 300
 };
 
 const title = {

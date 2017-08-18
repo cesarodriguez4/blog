@@ -10,7 +10,6 @@ import Chip from 'material-ui/Chip';
 import { Link } from 'react-router-dom';
 
 const gridCard = {
-  marginLeft: '6em',
   marginBottom: '2em',
   cursor: 'pointer',
   transition: '100ms linear all',

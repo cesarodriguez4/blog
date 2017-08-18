@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 
 const imgUrl = `https://pbs.twimg.com/profile_images/818531326970265601/AVd-m6Cd_400x400.jpg`;
 const imgStyle = {
-  width: '100%',
-  borderRadius: '50%'
+  width: '80%',
+  borderRadius: '50%',
+  marginLeft: '10%',
+  marginTop: '1em'
 };
+
 export default class ProfileThumb extends Component {
   render() {
   	return (
