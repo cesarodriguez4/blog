@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Open+Sans');
-
+body {
+  margin: 0;
+}
 .cardnew:hover {
   background-color: #fdfdfd;
   box-shadow: 1px 1px 4px #c3c3c3;

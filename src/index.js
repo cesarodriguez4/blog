@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from 'material-ui/styles';
+import createMuiTheme from 'material-ui/styles/theme';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './style.css';
 
+const theme = createMuiTheme();
+
 ReactDOM.render(
 	<BrowserRouter>
-	  <MuiThemeProvider>
+	  <MuiThemeProvider theme={theme}>
 	    <App/>
 	  </MuiThemeProvider>
 	</BrowserRouter>

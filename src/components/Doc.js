@@ -39,7 +39,7 @@ export default class Doc extends Component {
       td = '';
     }
   	return (
-          <Grid container gutter={0}>
+          <Grid container>
             <Grid item md={2}>
              {/* Aca pueden ir articulos recomendados*/}
             </Grid>

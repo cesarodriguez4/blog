@@ -12,20 +12,23 @@ import Grid from 'material-ui/Grid';
 import { Link } from 'react-router-dom';
 import Hidden from 'material-ui/Hidden';
 
-const bgHeader = {
-  backgroundColor: '#0275d8'
-};
-
-const ldrawer = {
-  width: 300
-};
-
-const title = {
-  marginTop: '2%',
-  color: 'white',
-  fontFamily: `'Berkshire Swash', cursive`,
-  textTransform: 'none',
-  fontSize: '1em'
+const style = {
+  bgHeader: {
+    backgroundColor: '#2d2d2d'
+  },
+  ldrawer: {
+    width: 300
+  },
+  title: {
+    marginTop: '2%',
+    color: 'white',
+    fontFamily: `'Berkshire Swash', cursive`,
+    textTransform: 'none',
+    fontSize: '1em'
+  },
+  langColor: {
+    color: 'white'
+  }
 }
 
 export default class Header extends React.Component {
@@ -56,7 +59,7 @@ export default class Header extends React.Component {
 	render() {
 		return(
       <div>
-        <AppBar style={bgHeader} position="static">
+        <AppBar style={style.bgHeader} position="static">
           <Toolbar>
             <Grid container justify='flex-start'>
               <Hidden only={['lg', 'md']}>
@@ -65,14 +68,13 @@ export default class Header extends React.Component {
                 </IconButton>
               </Hidden>
               <Typography type="title">
-                  <Link to="/"><Button style={title}>Cesarjs.xyz</Button></Link>
+                  <Link to="/"><Button style={style.title}>Cesarjs.xyz</Button></Link>
               </Typography>
             </Grid>
             <Grid container justify='flex-end'>
-              <Button raised
-                color='primary'
+              <Button style={style.bgHeader} raised
                 onClick={this.handleClick}>
-                  <i className='fa fa-language fa-2x'></i>
+                  <i style={style.langColor} className='fa fa-language fa-2x'></i>
                 </Button>
             </Grid>
             <Menu
@@ -84,7 +86,7 @@ export default class Header extends React.Component {
             </Menu>
           </Toolbar>
           <Drawer open={this.state.LeftDrawer} onRequestClose={this.handleLeftClose}>
-            <div style={ldrawer}>
+            <div style={style.ldrawer}>
               <ProfileThumb></ProfileThumb>
             </div>
           </Drawer>

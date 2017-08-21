@@ -7,18 +7,26 @@ import Hidden from 'material-ui/Hidden';
 import { LinearProgress } from 'material-ui/Progress';
 
 const URL_CARDS = `http://api.cesarjs.xyz/news`;
-const thumbMargin = {
-  marginRight: '6em',
-  marginLeft: '1em',
-  marginTop: '1em'
-};
-const mini = {
-  marginLeft: '-7em',
-  marginTop: '1em'
-};
-const feeds = {
-  marginTop: '2em'
-};
+
+const style = {
+  thumbMargin: {
+    marginRight: '5em',
+    marginLeft: '1em',
+    marginTop: '1em',
+    marginBottom: '2em'
+  },
+  mini: {
+    marginLeft: '-7em',
+    marginTop: '1em'
+  },
+  feeds: {
+    marginTop: '2em'
+  },
+  linearProgress: {
+    maxWidth: 550
+  }
+}
+
 export default class Home extends Component {
   componentWillMount() {
     fetch(URL_CARDS)
@@ -41,20 +49,20 @@ export default class Home extends Component {
     if (this.state.cards !== null) {
       feed = <Timeline cards={this.state.cards}></Timeline>;
     } else {
-      feed = <div><p>Loading...</p><LinearProgress/></div>;
+      feed = <div style={style.linearProgress}><p>Loading...</p><LinearProgress/></div>;
     }
   	return (
-        <Grid container justify='center' gutter={24}>
+        <Grid container justify='center'>
           <Hidden smDown>
-            <Grid item md={2} style={thumbMargin}>
+            <Grid item md={2} style={style.thumbMargin}>
               <ProfileThumb></ProfileThumb>
             </Grid>
           </Hidden>
-          <Grid item xs={12} md={7} style={feeds}>
+          <Grid item xs={12} md={7} style={style.feeds}>
           {feed}
           </Grid>
           <Hidden smDown>
-            <Grid item md={2} style={mini}><MiniPortfolio></MiniPortfolio></Grid>
+            <Grid item md={2} style={style.mini}><MiniPortfolio></MiniPortfolio></Grid>
           </Hidden>
         </Grid>
   		);
