@@ -43,7 +43,7 @@ export default class Doc extends Component {
             <Grid item md={2}>
              {/* Aca pueden ir articulos recomendados*/}
             </Grid>
-            <Grid className='content-md' item md={8}>
+            <Grid className='content-md markdown-body' item md={8} xs={10}>
               <div>{td}</div>
               <div>{cd}</div>
               <Markdown source={md}/>

@@ -1,15 +1,12 @@
-import React, {Component} from 'react';
-import Markdown from 'react-markdown';
-import Grid from 'material-ui/Grid';
-const md = `
 # Among my last projects you can see...
 I found pretty interesting build the web everyday. There's my contribution.    
+
 # [Clazapp](http://clazapp.com)
 ![Clazapp](http://res.cloudinary.com/cesarodriguez4/image/upload/v1503458844/amime_l989op.png)
 # [Viantti](https://play.google.com/store/apps/details?id=cr.ole.appxi&hl=es)
 ![Viantti](http://res.cloudinary.com/cesarodriguez4/image/upload/v1503458698/appxis_ofyo4v.png)
 # [Esdrafitness.com](http://esdrafitness.com)
-![Esdrafitness](http://res.cloudinary.com/cesarodriguez4/image/upload/c_crop,w_1366,x_0,y_88/v1503458951/Screenshot_from_2016-10-17_13_13_31_dpzves.png)
+![Esdrafitness](http://res.cloudinary.com/cesarodriguez4/image/upload/v1503458951/Screenshot_from_2016-10-17_13_13_31_dpzves.png)
 # [todocondelivery.com](http://todocondelivery.com)
 ![todocondelivery.com](http://res.cloudinary.com/cesarodriguez4/image/upload/v1503458692/todocond.com_ca5jvt.png)
 # [Gekosuplies.com](http://www.gekosupplies.com)
@@ -26,16 +23,3 @@ I'm really passionate to understand how a computer think,for that reason most of
 ![Exploring Es6](https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1434362311i/25720372._UY952_SS952_.jpg)
 ## Ninja Javascript
 ![Ninja Javascript](http://img.zanda.com/item/83062270000085/730xauto/Secrets_of_the_JavaScript_Ninja_John_Resig_and_Bear_Bibeault_Book.jpg)
-`;
-
-export default class CV extends Component {
-  render() {
-  	return (
-  	  <Grid container justify="center">
-  	   <Grid item lg={8} xs={10}>	
-         <Markdown className='content-md markdown-body' source={md}/>
-       </Grid>
-      </Grid>
-  		);
-  }
-}

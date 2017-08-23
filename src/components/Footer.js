@@ -15,7 +15,7 @@ export default class Footer extends Component {
   render() {
   	return (
       <Toolbar style={style.bgHeader}>
-        <Typography style={style.text}>All rights reserved.</Typography>
+        <Typography style={style.text}>2017 CR. You can check the source code in my github profile. #Peace </Typography>
       </Toolbar>
   		);
   }
