@@ -3,7 +3,7 @@ import { Button, Typography } from 'material-ui';
 import { Link } from 'react-router-dom';
 import Grid from 'material-ui/Grid';
 
-const imgUrl = `https://pbs.twimg.com/profile_images/818531326970265601/AVd-m6Cd_400x400.jpg`;
+const imgUrl = `foto_400x400.jpg`;
 const styles = {
   imgStyle: {
     width: '80%',
@@ -26,9 +26,9 @@ export default class ProfileThumb extends Component {
       	<img alt="Cesar Jr Rodriguez" src={imgUrl} style={styles.imgStyle}></img>
       	<Typography className='mt-2 mb-2' align='center' type='title'>
           <strong>Cesar Jr Rodriguez</strong></Typography>
-      	<Typography align='center' type='caption'>Software Developer</Typography>
+      	<Typography align='center' type='caption'>Software Engineer</Typography>
         <Typography align='center' type='caption'>
-          Civil Engineering Student at <strong>Universidad de Carabobo</strong>
+          Engineering Student at <strong>Universidad de Carabobo</strong>
         </Typography>
         <Grid container spacing={16} justify="center">
           <Grid item>
@@ -61,8 +61,8 @@ export default class ProfileThumb extends Component {
           </Grid>
         </Grid>
         <Typography type='subheading' align='center'>Current:</Typography>
-        <Typography align='center'>Web Developer
-          @ <strong>ISMCenter</strong>
+        <Typography align='center'>Software Engineer
+          @ <strong><a href={'https://bitlat.com'}>BITLAT</a></strong>
           </Typography>
         <Link to="/contact">
           <Button style={styles.btnContact} raised>Contact me</Button>

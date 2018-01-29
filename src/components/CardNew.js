@@ -11,10 +11,13 @@ function format(string) {
 const styles = {
   card: {
     maxWidth: 600,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    padding: '2em',
+    boxSizing: 'border-box',
+    backgroundColor: '#c9bfca'
   },
   media: {
-    height: 200
+    height: 180
   },
   chip: {
     float: 'right'
@@ -25,7 +28,6 @@ export default class CardNew extends Component {
     const date = new Date(this.props.info.date);
     const DATE = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
     const imgs = this.props.info.cover;
-    console.log(imgs);
     return (
       <Link to={`/docs/${this.props.info._id}/${format(this.props.info.title)}`}>
         <Card style={styles.card}>
