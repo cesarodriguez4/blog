@@ -68,7 +68,7 @@ export default class ProfileThumb extends Component {
           @ <strong><a href={'www.kolormedia.net'}>KOLORMEDIA</a></strong>
           </Typography>
         <Link to="/contact">
-          <Button style={styles.btnContact} raised>Contact me</Button>
+          <Button style={styles.btnContact}>Contact me</Button>
         </Link>
       </div>
   		);

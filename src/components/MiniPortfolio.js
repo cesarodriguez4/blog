@@ -26,7 +26,7 @@ export default class MiniPortfolio extends Component {
         </Typography>
         <Typography>Qualified remote experience using Skype, Trello, Slack and so on.</Typography>
         <Link to='/CV'>
-          <Button raised style={buttonW}>Learn more</Button>
+          <Button style={buttonW}>Learn more</Button>
         </Link>
       </div>
   		);

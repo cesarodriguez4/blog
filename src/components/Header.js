@@ -72,7 +72,7 @@ export default class Header extends React.Component {
               </Typography>
             </Grid>
             <Grid container justify='flex-end'>
-              <Button style={style.bgHeader} raised
+              <Button style={style.bgHeader} 
                 onClick={this.handleClick}>
                   <i style={style.langColor} className='fa fa-language fa-2x'></i>
                 </Button>
