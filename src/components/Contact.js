@@ -20,7 +20,7 @@ const style = {
     color: 'white'
   },
   successDisplay: {
-    backgroundColor: 'rgb(121, 255, 97)',
+    backgroundColor: '#4CAF4E',
     display: 'flex',
     textAlign: 'center',
     color: 'white'
@@ -31,7 +31,7 @@ function isEmail(e) {
   return true;
 }
 
-const URL_EMAIL = 'http://api.cesarjs.xyz/contact';
+const URL_EMAIL = 'http://localhost:8000/contact';
 
 export default class Contact extends Component {
   constructor(props) {
@@ -43,17 +43,22 @@ export default class Contact extends Component {
     this.sendEmail = this.sendEmail.bind(this);
   }
   sendEmail() {
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    
+    const myHeaders = new Headers({"Content-Type":"application/json"});
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
     if (isEmail) {
     fetch(URL_EMAIL, {
       method: 'POST',
-      body: {name, email, message}
+      headers: myHeaders,
+      body: JSON.stringify({name, email, message})
     }).then(result => {
-      console.log(result);
-      this.setState({success: 'Email has been send'});
+      if (result.status === 200) {
+        this.setState({success: 'Email has been send'});
+      } else {
+        this.setState({error: 'Something goes wrong.'});
+      }
     }).catch(error=>{
       this.setState({error: `An error ocurred: ${error}`});
     });
