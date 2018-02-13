@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import Markdown from 'react-markdown';
 import Grid from 'material-ui/Grid';
+import ReactLoading from 'react-loading';
 
 let md = '';
 let cd = '';
 let td = '';
+
+const style = {
+  loading: {
+    backgroundColor: 'rgb(201, 191, 202)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  txt: {
+    marginBottom: '10%'
+  }
+}
 
 export default class Doc extends Component {
   constructor(props) {
@@ -30,15 +43,10 @@ export default class Doc extends Component {
   }
   render() {
     if (this.state.doc) {
-      td = <h1>{this.state.doc.title}</h1>;
+       td = <h1>{this.state.doc.title}</h1>;
       cd = <img alt={this.state.doc.title} src={this.state.doc.cover}/>;
       md = this.state.doc.content;
-    } else {
-      md = 'Loading...';
-      cd = '';
-      td = '';
-    }
-  	return (
+      return (
           <Grid container>
             <Grid item md={2}>
              {/* Aca pueden ir articulos recomendados*/}
@@ -52,6 +60,13 @@ export default class Doc extends Component {
              {/* Aca va publicidad*/}
             </Grid>
           </Grid>
-  		);
+      );
+    } else {
+      return (
+        <div style={style.loading}>
+        <ReactLoading className='loading' type={'bars'} color={'grey'} height='300' width='300' />
+        <h1 style={style.txt}>Loading...</h1>
+        </div>);
+    }
   }
 }

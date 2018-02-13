@@ -64,6 +64,9 @@ export default class ProfileThumb extends Component {
         <Typography align='center'>Software Engineer
           @ <strong><a href={'https://bitlat.com'}>BITLAT</a></strong>
           </Typography>
+          <Typography align='center'>Software Developer
+          @ <strong><a href={'www.kolormedia.net'}>KOLORMEDIA</a></strong>
+          </Typography>
         <Link to="/contact">
           <Button style={styles.btnContact} raised>Contact me</Button>
         </Link>
