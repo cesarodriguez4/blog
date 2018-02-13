@@ -31,7 +31,7 @@ function isEmail(e) {
   return true;
 }
 
-const URL_EMAIL = 'http://localhost:8000/contact';
+const URL_EMAIL = 'http://api.cesarjs.xyz/contact';
 
 export default class Contact extends Component {
   constructor(props) {

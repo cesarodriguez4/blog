@@ -38,7 +38,7 @@ export default class CardNew extends Component {
               {this.props.info.title}
             </Typography>
             <Typography type="caption" component="p">
-              {this.props.info.content.substring(0, 100)}
+              {this.props.info.content.substring(0, 100)}...
             </Typography>
           </CardContent>
         </Card>
