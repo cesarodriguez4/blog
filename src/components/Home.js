@@ -20,7 +20,7 @@ const style = {
     marginTop: '1em'
   },
   feeds: {
-    marginTop: '2em'
+    marginTop: 0
   },
   linearProgress: {
     maxWidth: 550

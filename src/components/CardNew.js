@@ -17,7 +17,7 @@ const styles = {
     backgroundColor: '#c9bfca'
   },
   media: {
-    height: 180
+    width: '100%'
   },
   chip: {
     float: 'right'
